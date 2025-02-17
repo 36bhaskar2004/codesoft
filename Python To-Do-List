@@ -1,0 +1,79 @@
+
+def meanu():
+    print("Enter 1 for ADD task:")
+    print("Enter 2 for VIEW task:")
+    print("Enter 3 for EDIT task(Edit the task name):")
+    print("Enter 4 for UPDATE task(Pending or Complete):")
+    print("Enter 5 for REMOVE task:")
+    print("Enter 6 for EXIST:")
+    
+def add(tasks):
+    task=input("Enter your new task:")
+    tasks.append({"Name":task ,"status":"Incomplete"})
+    print("Task add successfully!")
+    
+    
+def view(tasks):
+    print("\n@The list of Tasks:")
+    count=1
+    if not tasks:
+        print("no task in the list")
+    else:    
+        for i in tasks:
+            print(f"{count}.{i['Name']} :- {i['status']}")
+            count+=1 
+            
+def edit(tasks):
+    n=int(input("\n\nEnter task number for change name:"))
+    new=input("\nEnter new task name:")
+    if 1 > n or n > len(tasks):
+        print("\nThis number is very big!!!")
+    else:
+        tasks[n-1]['Name']=new
+        print("\n**Name change successfully**")
+        
+def update(tasks):
+    n=int(input("\n\nEnter task number for update the status:"))
+    
+    if 1 > n or n > len(tasks):
+        print("\nThis number is very big!!!")
+    else:
+        tasks[n-1]['status']="COMPLEATE"       
+        print("\n**Status change successfully**")
+        
+def remove(tasks):
+    n=int(input("\n\nEnter task number for Remove Task:"))
+    
+    if 1 > n or n > len(tasks):
+        print("\nThis number is very big!!!")
+    else:
+        del tasks[n-1]      
+        print("\n**The Task REMOVE successfully**")
+        
+def start():
+    tasks=[]
+    while True:
+        print("\n---------------------//------------------------")
+        print("Chose any one option from List:\n")
+        meanu()
+        
+        option=int(input("\nEnter your choise:"))
+        if option == 1:
+            add(tasks)
+        if option == 2:
+            view(tasks)
+        if option == 3:
+            edit(tasks)
+        if option == 4:
+            update(tasks)
+        if option == 5:
+            remove(tasks)    
+        if option == 6:
+            print("YOUR EXISTS!")
+            break
+        if option >= 7:
+            print("Wrong value please enter correct value:")
+
+    
+start()   
+    

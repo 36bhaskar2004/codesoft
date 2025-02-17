@@ -1,0 +1,64 @@
+def meanu():
+    print("Enter 1 for Addition:")
+    print("Enter 2 for Substraction:")
+    print("Enter 3 for Multiplication:")
+    print("Enter 4 for Dividation:")
+    print("Enter 5 for Remainder:")
+    print("Enter 6 for EXIST:")
+
+
+def add():
+    print("\nEnter any two numbers")
+    a=int(input("Enetr first number:"))
+    b=int(input("Enetr second number:"))
+    print("\nAddition==>",a+b)
+    
+def sub():
+    print("\nEnter any two numbers")
+    a=int(input("Enetr first number:"))
+    b=int(input("Enetr second number:"))
+    print("\nSubstraction==>",a-b)
+ 
+def mul():
+    print("\nEnter any two numbers")
+    a=int(input("Enetr first number:"))
+    b=int(input("Enetr second number:"))
+    print("\nMultiplication==>",a*b)
+    
+def div():
+    print("\nEnter any two numbers")
+    a=int(input("Enetr first number:"))
+    b=int(input("Enetr second number:"))
+    print("\nDivision==>",a/b)
+    
+def rem():
+    print("\nEnter any two numbers")
+    a=int(input("Enetr first number:"))
+    b=int(input("Enetr second number:"))
+    print("\nRemainder==>",a%b)
+    
+    
+def calculator():
+    while True:
+        print("\n---------------------//------------------------")
+        print("Chose any one option from List:\n")
+        meanu()
+        
+        option=int(input("\nEnter your choise:"))
+        if option == 1:
+            add()
+        if option == 2:
+            sub()
+        if option == 3:
+            mul()
+        if option == 4:
+            div()
+        if option == 5:
+            rem()    
+        if option == 6:
+            print("!!Your Exist from calculator!!")
+            break
+        if option >= 7:
+            print("!!!Wrong value please enter correct value!!!")
+
+calculator()
